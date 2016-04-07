@@ -1,0 +1,27 @@
+{
+  "name": "fe-automation",
+  "version": "1.0.0",
+  "description": "learing-gulp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zwj2010hao/FE-Automation.git"
+  },
+  "author": "Gavin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zwj2010hao/FE-Automation/issues"
+  },
+  "homepage": "https://github.com/zwj2010hao/FE-Automation#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-csscomb": "^3.0.7",
+    "gulp-import-css": "^0.1.2",
+    "gulp-livereload": "^3.8.1",
+    "gulp-sass": "^2.2.0"
+  }
+}
