@@ -1,0 +1,41 @@
+<script type="text/html">
+        <div class="goods-name">
+        <%switch(gooditem.single.resourcetype){case "1":%>
+          <i class="icon icon-file"></i>
+        <%break;case "2":%>
+        <i class="icon icon-mail"></i>
+        <%break;case "3":%>
+        <i class="icon icon-necktie"></i>
+        <%break;case "4":%>
+        <i class="icon icon-necktie"></i>
+        <%break;case "5":%>
+        <i class="icon icon-refresh"></i>
+        <%break;case "6":%>
+        <i class="icon icon-agency"></i>
+        <%break;default:%>
+        <i class="icon icon-branch"></i></span>
+        <%}%>
+        <%= gooditem.resname%></div>
+        <div class="single-buy">
+          <div class="line1 clearfix">
+            <span class="txt fl">单买价</span>
+            <span class="price">￥<%= gooditem.single.price%></span>
+          </div>
+          <div class="line2">
+            <a href="javascript:void(0)" title="订购" class="order-btn single-order-btn">订购</a>
+          </div>
+        </div>
+        <div class="batch-buy">
+          <div class="line1 clearfix">
+            <span class="txt fl">套餐包<i class="icon icon-arrow-down">&nbsp</i></span>
+            <span class="price">&nbsp</span>
+          </div>
+          <div class="line2">
+            <a href="javascript:void(0)" title="订购" class="order-btn batch-order-btn">订购</a>
+          </div>
+        </div>
+        <div class="pulldown-msg" style="display:none;">
+            <ul>
+            </ul>
+        </div>
+</script>

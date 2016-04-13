@@ -1,0 +1,147 @@
+//detial-head
+.resume-detail{
+	padding-bottom: 60px;
+}
+.detail-head{
+	padding-bottom: 17px;
+	background-color: #FFF;
+	font-size:$fs-middle;
+	color: $light-gray;
+	ul{
+		padding-left: 20px; 
+		background-color: #f6f8fa;
+		border-radius: 4px;
+	}
+	.filter{
+		width:135px;
+		height: 36px;
+		line-height: 36px;
+		padding-right: 20px;
+		.i-filter{
+			@extend %i-circle;
+			*vertical-align: baseline;
+			&.i-filter-click{
+				@extend %i-circle-click;
+			}
+		}
+	}
+}
+.detail-content{
+	color: $light-gray;
+	background-color: #fff;
+	font-size: $fs-middle;
+	.no-content{
+		height:200px;
+		line-height: 200px;
+		font-size: 20px;
+		text-align: center;
+		.icon-sign-warn{
+			color:#5d9cec;
+			margin-right: 10px;
+		}
+	}
+	.even{
+		background-color: #f6f8fa;
+	}
+	table{
+		width: 100%;
+	}
+	thead th{
+		text-align: left;
+		height: 48px;
+		vertical-align: middle;
+		border-bottom: 1px solid $border-shadow;
+		border-radius: 4px;
+	}
+	tr td{
+		height: 48px;
+		vertical-align: middle;
+		text-align: left;
+		&.td-name{
+			padding-left: 10px;
+			a{
+				display: inline-block;
+				color: $light-blue;
+				padding-left: 10px;
+			}
+
+		}
+	}
+	.seeker-name{
+		padding-left: 10px;
+		i{
+			margin-right: 20px;
+		}
+	}
+	.opra{
+		@include button(40px,25px,$fs-small,4px);
+		margin-right: 8px;
+	}
+	.opra-interview{
+		width: 85px;
+		@extend %button-class3;
+	}
+	.opra-seeinterview{
+		width: 85px;
+		@extend %button-class6;
+		border: 1px solid $border-shadow;
+	}
+	.opra-export,.opra-delete,.opra-addmark,.opra-addgroup{
+		@extend %button-class2;
+		border: 1px solid $border-shadow;
+	}
+	.icon-checked:before {
+    	padding-left: 2px;
+	}
+	.i-mark{
+		display: inline-block;
+		width: 14px;
+		height: 18px;
+		background:url("http://img.58cdn.com.cn/zpvip/images/resume-icons.png?v1") no-repeat;
+		vertical-align: middle;
+	}
+	.i-mark-nonfit{
+		background-position: -2px 0;
+	}
+	.showInterview{
+		border:1px solid #f6f8fa;
+		.interview-msg{
+			margin: 30px 20px;
+		}
+	}
+}
+
+.detail-content,.detail-foot{
+	.i-check{
+		@extend %i-check; 
+	}
+}
+.detail-foot{
+	padding-left:10px;
+	padding-top:12px;
+	margin-bottom: 20px;
+	height: 35px;
+	line-height: 35px;
+	.batch{
+		font-size: 14px;
+		width: 86px;
+		height: 35px;
+		margin-right: 8px;
+		text-align: center;
+		border-radius: 6px;
+		@extend %button-class1;
+		a{
+			color: #FFF;
+		}
+	}
+	.batch-interview{
+		@extend %button-class3;
+	}
+	.page-num{
+		font-size: $fs-middle;
+	}
+	.choose-all{
+		vertical-align: middle;
+	}
+
+}

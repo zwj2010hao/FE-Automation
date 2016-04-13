@@ -1,0 +1,24 @@
+<script type="text/html">
+	<% if(itemsinfo.length <= 0){%>
+	<div <%=itemsinfo%>>您还没有添加过任何搜索器！</div>
+	<%}else{%>
+	<div class="searchtoolList">
+	<ul>
+		<% _.each(itemsinfo,function(item){%>
+		<li toolid=<%=item.searcherid%> cateid=<%=item.cateid%> dsid=<%=item.dsid%> age=<%=item.age%> work=<%=item.work%> education=<%=item.education%> sex=<%=item.sex%>
+		salary=<%=item.salary%> startage=<%=item.startage%> endage=<%=item.endage%>>
+			<i class="i-radio"></i>
+			<% var n = item.searchername.indexOf("|")%>
+			<span class="searchtool-name"><%= n==-1?item.searchername:item.searchername.substring(0,n)%></span>
+			<span class="searchtool-content"><%= n==-1?"":item.searchername.substring(n+1)%></span>
+			<i class="icon icon-circle-close i-searchtool-del" title="删除该条选择器">&nbsp</i>
+		</li>
+		<%})%>
+	</ul>	
+	</div>
+	<div class="pop-button">
+		<a href="javascript:void(0)" class="btn-cancel">取消</a>		
+		<a href="javascript:void(0)" class="btn-confirm">确定</a>
+	</div>
+	<%}%>
+</script>

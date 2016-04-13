@@ -1,0 +1,114 @@
+@import "mod/resume/resume_variate.scss";
+@import "mod/common/reset.css";
+@import "mod/common/iconfont.css";
+@import "mod/common/vip-header.scss";
+@import "mod/common/vip-footer.scss";
+@import "mod/common/vip-icon.scss";
+body{
+	font-family:'Microsoft Yahei',Helvetica,Arial,sans-serif;
+	background-color: #f0f2f5;
+}
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 980px;
+  margin: 0 auto;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: both;
+  height: 0;
+}
+.clearfix {
+  zoom: 1;
+}
+img{
+  border:0;
+}
+em{
+  font-style:normal;
+}
+i{
+  cursor: pointer;
+}
+.icon{
+  text-align: center;
+  display: inline-block;
+}
+//button 
+@mixin button($width,$height,$fs,$braduis){
+  width: $width;
+  height: $height;
+  line-height: $height;
+  font-size: $fs;
+  text-align: center;
+  display: inline-block;
+  border-radius: $braduis;
+}
+%button-class1{
+  //蓝底白字
+  color: #fff;
+  background-color: $light-blue;
+}
+%button-class2{
+  //白底蓝字
+  color: $light-blue;
+  background-color: #fff;
+}
+%button-class3{
+  //橘黄底白字
+  color:#fff;
+  background-color: #fc6e51;
+}
+%button-class4{
+  //灰底白字
+  color:#fff;
+  background-color: #c5c9ce;
+}
+//选择时 圆样式
+%i-circle{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    vertical-align: -5px;
+    background: url('/images/resume-icons.png?v1') no-repeat 0 -28px;
+    *vertical-align: baseline;
+    &:hover{
+      background-position: -28px -28px;
+    };
+}
+%i-circle-click{
+  background-position: -28px -28px;
+}
+//选择时 对号样式
+%i-check{
+    font-size: 14px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    color: #949fab;
+    border: 1px solid #949fab;
+    border-radius: 4px;
+}
+//下拉按钮
+@mixin pulldownbutton($w,$h,$fs){
+    font-size: $fs;
+    line-height: $h;
+    display: inline-block;
+    width: $w;
+    height: $h;
+    text-align: center;
+}

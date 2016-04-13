@@ -1,0 +1,72 @@
+.vip-recruit-overview {
+  .recruit-overview-total {
+    width: 233px;
+    margin-top: 30px;
+    text-align: center;
+    padding: 42px 0;
+    border-left: 1px solid #e3e4e8;
+    h4 {
+      color: $fontColorLightBlue;
+      font-size: 68px;
+      line-height: 90px;
+    }
+    p {
+      color: $fontColorLightBlue;
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  .recruit-overview-cards {
+    margin-top: 30px;
+    padding: 0 32px 54px;
+  }
+
+  .recruit-overview-compare {
+    float: left;
+    background: #f1f7fd;
+    text-align: center;
+    padding: 40px 0;
+    width: 428px;
+    height: 90px;
+    h4 {
+      color: $fontColorLightBlue;
+      font-size: 22px;
+      line-height: 30px;
+      margin-bottom: 20px;
+    }
+    p {
+      color: $fontColorGray;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  .recruit-overview-improve {
+    background: #fafafa;
+    width: 388px;
+    height: 106px;
+    float: left;
+    padding: 40px 20px 24px;
+    p {
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 20px;
+      margin-bottom: 28px;
+      color: $fontColorLightBlue;
+    }
+    ul {
+      margin-top: 5px;
+      li {
+        font-size: 14px;
+        line-height: 24px;
+        color: $fontColorGray;
+        margin-bottom: 5px;
+        .vip-button {
+          float: right;
+        }
+      }
+    }
+  }
+
+}

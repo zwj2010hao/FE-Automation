@@ -1,0 +1,26 @@
+.vip-bar {
+  position: relative;
+  background: #e9ebf0;
+  .bar-fill {
+    height: 100%;
+    background: #5d9cec;
+    width: 0;
+  }
+  .bar-text {
+    position: absolute;
+    right: -40px;
+    top: 0;
+    margin-top: 1px;
+    font-size: 14px;
+    line-height: 14px;
+    color: $fontColorGray;
+  }
+}
+
+.vip-table {
+  .vip-bar {
+    margin-left: 20px;
+    height: 14px;
+    width: 430px;
+  }
+}

@@ -1,0 +1,162 @@
+<script type="text/html">
+<% if(resumeInfo.length == 0) {%>
+<div class="no-content">
+  <div>
+    <i class="icon icon-sign-warn">&nbsp</i>很抱歉，没有找到符合已选条件的简历哦！
+  </div>
+  <ul>
+    <li>建议您：</li>
+    <li>1、修改筛选条件</li>
+    <li>2、去掉不必要的字句，扩大搜索范围，如"的"、"什么"等</li>
+  </ul>
+</div>
+<%}else{%>
+<table border="0" cellspacing='0'>
+       <thead>
+         <tr>
+           <th class="jobtofind choose-all"><i class="i-check icon i-check-all">&nbsp</i>求职意向</th>
+           <th class="seeker-name">姓名</th>
+           <th class="seeker-gender">性别</th>
+           <th class="seeker-age">年龄</th>
+           <th class="seeker-edu">学历</th>
+           <th class="seeker-exp">工作经验</th>
+           <th class="seeker-salary">期望月薪</th>
+           <th class="update-time">更新时间</th>
+           <th class="operation">操作</th>
+         </tr>
+       </thead>
+       <tbody>
+      <% _.each(resumeInfo,function(item,index){%>
+      <% if(index%2 == 0){%>
+         <tr class="item-detailrow">
+      <%}else{%>
+         <tr class="item-detailrow even">
+       <%}%>
+          <td class="item-job">
+            <i class="i-check icon" resumeiD=<%= item.resumeID%>>&nbsp</i>
+            <a href="<%=item.url%>" target="_blank"><%= item.targetPosition%></a>
+            <% if(item.isValidaMobile){%>
+            <i class="icon-validateMobile" title="手机已认证"></i>
+            <%}%>
+            <% if(item.lightSpotCount>0){%>
+            <i class="icon-lightSpot">[<%=item.lightSpotCount%>亮点]</i>
+            <%}%>
+            <% if(item.picCount>0){%>
+            <i class="icon-picCount">[<%=item.picCount%>图]</i>
+            <%}%>
+            <span class="hoverInfo" style="display:none;">
+            <div id="arrow">
+              <em></em>
+              <span></span>
+            </div>
+            <div id="tipsbox" class="tipsbox">
+              <div class="xboxcontent">
+                <p>
+                  <span class="name"><%= item.trueName%></span>
+                  <span class="sex-age">（<%= item.sex==0?'女':'男'%>  ，<%= item.age%>岁）</span>
+                </p>
+                <p class="res-per-info">
+                  简历完整度：
+                  <span><%= item.complete%>%</span>
+                  <span class="per-par">
+                    <span style="width:<%= item.complete%>%" class="per-child"></span>
+                  </span>
+                </p>
+                <ul class="clearfix">
+                  <li class="hope-job">
+                    期望职位：
+                    <span><%= item.resumeTp%></span>
+                  </li>
+                  <li>
+                    求职地区：
+                    <span><%= item.targetArea%></span>
+                  </li>
+                  <li>
+                    期望月薪：
+                    <span><%= item.targetSalary%></span>
+                  </li>
+                  <li class="fln">
+                    最高学历：
+                    <span><%= item.education%></span>
+                  </li>
+                </ul>
+              </div>
+              <% if (item.experYears !=""){%>
+              <div class="time-tab">
+                <p>
+                  工作了<span class="job-time"><%= item.experYears%></span>，做了<span class="job-num"><%= item.experCount%></span>份工作
+                </p>
+                <p>
+                  <%= item.experCos%>
+                </p>
+                </div>
+                <%}%>
+                <div class="ability-con clearfix">
+                <ul>
+                <% _.each(item.lspot,function(item){%>
+                  <li>
+                    <div class="green">
+                      <em></em>
+                      <span><%= item%></span>
+                    </div>
+                  </li>
+                <%})%>
+                </ul>
+              </div>
+               <% if (item.letter !=""){%>
+              <p class="intr-con"><%= item.letter%></p>
+              <%}%>
+            </div>
+          </span>
+          </td>
+           <td><%= item.trueName%></td>
+           <td><%= item.sex==0?'女':'男'%></td>
+           <td><%= item.age%></td>
+           <td><%= item.education%></td>
+           <td><%= item.wrokYear%></td>
+           <td><%= item.targetSalary%></td>
+           <td><%= item.updateDate%></td>
+           <td>
+           <% if(item.isDownload){%>
+           <a class="opra-alreadydown" href="javascript:void(0)" title="已经下载">已经下载</a>
+           <%} else{%>
+           <a class="opra-download" href="javascript:void(0)" title="下载简历" resumeiD=<%= item.resumeID %>>下载简历</a>
+           <%}%>
+           </td>  
+           </tr>
+           <tr class="showDtl" style="display:none">
+            <td colspan="9">
+              <div>
+                <ul>
+                <% if(item.letter !=""){%>
+                  <li>
+                    <div class="tle">自我评价：</div>
+                    <div class="dtl"><p><%= item.letter%></p></div>
+                  </li>
+                <%}%>
+                <% if(item.experiences.length>0){%>
+                  <li>
+                    <div class="tle">工作经验：</div>
+                    <div class="dtl">
+                    <% _.each(item.experiences,function(item){ %>
+                      <p>
+                      <span><%=item.startDate%>至<%=item.endDate%><span>[<%=item.persistTime%>]&nbsp</span>
+                      </span>
+                      <sapn><%=item.company%>&nbsp</sapn>
+                      <span><%=item.positionName%></span>
+                    </p>
+                    <% }) %>
+                    </div>
+                  </li>
+                  <%}%>
+                </ul>
+                <div class="operDiv"><a href="<%=item.url%>" target="_blank" class="showJL" title="显示简历" tongji_tag="vip_zp_Applications_reveal"><i class="icon icon-file"></i>显示简历</a>
+                </div>
+              </div>
+              </td>
+           </tr>
+         <% })%>
+       </tbody>
+     </table>
+<% }%>
+</script>

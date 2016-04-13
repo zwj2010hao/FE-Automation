@@ -1,0 +1,45 @@
+$light-blue: #5d9cec;
+$light-gray: #585858;
+$lighter-gray: #949fab;
+.page-num{
+	vertical-align: top;
+	.prevPage,.nextPage,.pageNum{
+		display: inline-block;
+		height: 35px;
+		line-height: 35px;
+		text-align: center;
+	}
+	.prevPage,.nextPage{
+		width: 45px;
+		background-color: $light-blue;
+		color: #fff;
+		&:hover{
+    		background-color: #548cd4;
+  		}
+	}
+	.pageNum{
+		width: 25px;
+		color: $light-gray;
+		&:hover{
+			color:$light-blue;
+		};
+	}
+	.prevPage{
+		border-radius:5px 0 0 5px;
+	}
+	.nextPage{
+		border-radius:0 5px 5px 0;
+	}
+	.disabled{
+		background-color: $lighter-gray;
+		&:hover{
+    		background-color: $lighter-gray!important;
+  		}
+	}
+	.current{
+		color: $light-blue;
+	}
+	.omit{
+		color: $light-gray;
+	}
+}

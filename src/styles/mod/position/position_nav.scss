@@ -1,0 +1,16 @@
+@import "mod/common/breadcrumbNavigation.scss";
+.resume_nav{
+  padding-bottom: 20px;
+  .nav-title{
+    font-size: 12px;
+    color: #949fab;
+    padding: 16px 0;
+    letter-spacing: 2px;
+    .cat-class2{
+      color:#6d747d;
+    }
+  }
+  ul.nav_position_ul{
+    @include BreadcrumbNavigation(100px,50px);
+  }
+}

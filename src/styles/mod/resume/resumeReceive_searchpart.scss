@@ -1,0 +1,156 @@
+.search{
+	position:relative;
+	z-index: 3;
+	height: 148px;
+	margin-bottom: 20px;
+	background-color: #fff;
+	border-top:2px solid $border-shadow;
+	border-radius: 5px;
+	font-size:$fs-middle;
+	color: $light-gray;
+	.radiusbottom-none{
+		border-bottom-right-radius: 0!important;
+    	border-bottom-left-radius: 0!important;
+	} 
+	li{
+		float: left;
+		cursor: pointer;
+	}
+	li span{
+		display: inline-block;
+		height: 100%;
+		vertical-align:top;
+	}
+	.search-choose{
+		width: 940px;
+		margin: 0 auto;
+		padding-top: 30px;
+		li{
+			height: 35px;
+			line-height: 35px;
+		}
+		.search-item{
+			border: 1px solid #e3e4e8;
+			border-radius: 2px;
+			margin-right: 8px;
+		}
+		.item-name{
+			border-right:1px solid #e3e4e8;
+			width: 80px;
+			padding-left: 10px;
+			&.model_sex{
+				width:50px;
+			}
+		}
+		i{
+			@include pulldownbutton(30px,33px,16px);
+		}
+		.search-title{
+			padding-right: 9px;
+		}
+		.positionType .item-name{
+			width: 405px;
+		}
+	}
+	.search-input{
+		height: 35px;
+		line-height: 35px;
+		font-size: 0;
+		width:264px;
+		.wrap-input{
+			display: inline-block;
+			border: 1px solid #e3e4e8;
+			border-radius: 4px;
+			width: 160px;
+			height: 35px;
+			vertical-align: top;
+		}
+		.search-button{
+			display: inline-block;
+			font-size:0;
+			margin-left: 10px;
+			height: 33px;
+			vertical-align: top;
+			.search-btn,.clear-btn{
+				@include button(85px,33px,$fs-middle,4px);
+				border: 1px solid #e3e4e8;
+				margin-right: 5px;
+			}
+			.search-btn{
+				border: 1px solid $light-blue;
+				letter-spacing: 4px;
+				@extend %button-class1;
+			}
+		}
+	}
+	.define-age{
+		span{
+			&.min-age,&.max-age{
+				width:32px;
+				border: 1px solid #c5c9ce;
+				border-radius: 2px;
+			}
+			&.min-age{
+				margin-left: 8px;
+			}
+			&.max-age{
+				margin-right: 8px;
+			}
+			&.age-break{
+				font-size: 12px;
+				line-height: 36px;
+				width: 20px;
+				text-align: center;
+			}
+		}
+		input{
+			font-family: 'Microsoft Yahei',Helvetica,Arial,sans-serif;
+			width: 32px;
+			height: 34px;
+			padding-left: 2px;
+			color: #949fab;
+			border: 0;
+			background-color: transparent;
+		}
+	}
+	.selType{
+		@extend %selType
+	}
+	.selType-postname{
+		width:445px;
+		top:67px;
+		left:85px;
+		max-height: 280px;
+    	overflow-y:scroll;
+	}
+	.selType-sex{
+		width:91px;
+		top:134px;
+		left:347px;
+	}
+	.selType-education{
+		width:121px;
+		top:134px;
+		left:216px;
+	}
+	.selType-experience{
+		width:121px;
+		top:134px;
+		left:85px;
+	}
+	.selType-age{
+		width:121px;
+		top:134px;
+		left:448px;
+	}
+}
+
+#accutate-key{
+	width: 150px;
+	height: 33px;
+	padding-left:10px;
+	border:0;
+	background-color:transparent;
+	color: $light-gray;
+	font-family: 'Microsoft Yahei',Helvetica,Arial,sans-serif;
+}

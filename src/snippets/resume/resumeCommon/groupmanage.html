@@ -1,0 +1,36 @@
+<script type="text/html">
+	<div class="popgroup-list" <%=chooseid%>>
+		<ul class="clearfix">
+		<% _.each(groupList,function(item,index){%>
+			<%if(index%2==0){%>
+			<li class="group-item odd" groupid=<%=item.id%>>
+			<%}else{%>
+			<li class="group-item" groupid=<%=item.id%>>
+			<%}%>
+				<div class="view">
+					<span class="group-name"><i class="i-radio"></i><%=item.favorites%></span>
+					<i class="icon icon-pen i-edit" title="修改分组名称">&nbsp</i>
+					<i class="icon icon-close i-delete" title="删除该分组">&nbsp</i>
+				</div>
+				<div style="display: none" class="edit">
+					<input name="updatename" type="text" value=<%=item.favorites%> prevalue=<%=item.favorites%> />
+					<i class="i-word">确认</i>
+				</div>
+			</li>
+		<%})%>
+		</ul>
+	</div>
+	<div class="popgroup-add">
+		<span class="fw500">新建分组</span>
+		<input class="edit" type="text" placeholder="请输入标签名称" />
+		<a href="javascript:void(0)" class="btn-groupadd" title="新增分组">添加</a>
+		<span class="fs12">最多可新建20个分组</span>
+
+	</div>
+	<div class="popgroup-button">
+		<a href="javascript:void(0)" class="btn-cancel">取消</a>
+		<%if(chooseid !=""){%>
+		<a href="javascript:void(0)" class="btn-confirm">确定</a>
+		<%}%>
+	</div>
+</script>

@@ -1,0 +1,25 @@
+@mixin search-row($w,$h,$pd-b){
+	font-size: 0;
+	line-height: $h;
+	height: $h;
+	padding-bottom: $pd-b;
+}
+@minxin search-title($fs){
+	font-size: $fs;
+}
+@minxin search-item($h,$w-left,$w-right,$pd-b,$fs){
+	height: $h;
+	font-size: $fs;
+	.item-name{
+		padding-left:10px;
+		display: inline-block;
+		width: $w-left;
+		border-right: 1px solid #c5c9ce; 
+
+	}
+	i{
+		display: inline;
+		width: $w-right;
+		text-align: center;
+	}
+}

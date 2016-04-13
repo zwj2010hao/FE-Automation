@@ -1,0 +1,21 @@
+<script type="text/html">
+  <div class="vip-toolbox">
+    <ul>
+      <% for(var idx = 0, len = list.length; idx < len; idx++) { %>
+      <li>
+        <% if(list[idx].html) { %>
+        <%= list[idx].html %>
+        <% } else { %>
+        <a href="<%= list[idx].href %>" class="<%= list[idx].className %> <%if(idx == 0) { %>toolbox-first<% } %>" <% if(list[idx].target) { %>target="<%= list[idx].target %>"<% } %>>
+          <% if(list[idx].hoverText) {%>
+          <div class="toolbox-info">
+            <p><%= list[idx].hoverText %></p>
+          </div>
+          <% } %>
+        </a>
+        <% } %>
+      </li>
+      <% } %>
+    </ul>
+  </div>
+</script>

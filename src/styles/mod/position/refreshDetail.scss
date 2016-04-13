@@ -1,0 +1,90 @@
+div.refreshTable{
+  margin-top: -20px;
+  .refreshNav{
+    width: 100%;
+    height:40px;
+    background: #fff;
+    border-top:2px solid $posBorderColor;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    padding: 17px 0 10px 0;
+    div{
+      float: left;
+      margin-left: 25px;
+      line-height: 32px;
+    }
+    .select{
+      margin-left: 10px;
+    }
+    .infoSerialInp{
+      width: 180px;
+      height: 30px;
+      border: 1px solid $posBorderColor;
+      border-radius: 4px;
+      color:$fontColorGray;
+      font-size: 14px;
+    }
+    .queryType,.queryTime{
+      width: 220px;
+      position: relative;
+      .queryTypeText{
+        float: left;
+      }
+      .queryTimeSel{
+        margin-left: 5px;
+        float: right;
+        width:123px;
+        height:34px;
+        border: 1px solid $posBorderColor;
+        border-radius: 4px;
+        color:$fontColorGray;
+        font-size: 14px;
+        line-height: 34px;
+        text-indent: 10px;
+        i{
+          width: 28px;
+          height: 34px;
+          border-left: 1px solid $posBorderColor;
+          line-height: 34px;
+          position: absolute;
+          top:1px;
+          right: 5px;
+        }
+      }
+    }
+    .queryTime{
+      width: 230px;
+      .queryTimeSel{
+        border:none;
+        width:190px;
+        i{
+          position: absolute;
+          top:1px;
+          right: 3px;
+          z-index: 0;
+        }
+        input{
+          border: 1px solid $posBorderColor;
+          border-radius: 4px;
+          color:$fontColorGray;
+          font-size: 14px;
+          line-height: 34px;
+          text-indent: 10px;
+
+        }
+      }
+    }
+  }
+  #searchBtn{
+    padding: 6px 15px 6px 10px;
+    margin-left: 25px;
+  }
+}
+#cancelTotalBtn{
+  margin-left: 50px;
+}
+.refreshTable{
+  table .oneCheck{
+    top:11px;
+  }
+}

@@ -1,0 +1,71 @@
+<script type="text/html">
+<% if(resumeInfo.length == 0) {%>
+<div class="no-content"><i class="icon icon-sign-warn">&nbsp</i>分组下没有简历哦！</div>
+<%}else{%>
+	<table border="0" cellspacing='0' class="item-list">
+      <thead>
+         <tr class="even">
+           <th class="seeker-name choose-all">
+           <i class="i-check icon">&nbsp</i>姓名</th>
+           <th class="seeker-gender">性别</th>
+           <th class="seeker-age">年龄</th>
+           <th class="seeker-edu">学历</th>
+           <th class="seeker-exp">工作经验</th>
+           <th class="download-time">下载时间</th>
+           <th class="seeker-salary">期望月薪</th>
+           <th class="seeker-phone">联系方式</th>
+           <th class="operation">操作</th>
+         </tr>
+       </thead>
+       <tbody>
+       <% _.each(resumeInfo,function(item,index){%>
+       <% if(index%2 == 0){%>
+         <tr>
+      	<%}else{%>
+         <tr class="even">
+      	 <%}%>
+           <td class="td-name" style="width:15%">
+            <i class="i-check icon" resumeid=<%=item.resumeid%> infoid=<%=item.id%>>&nbsp</i>
+            <!-- <% if(item.ex1 == 0){%>
+            <i class="i-mark i-mark-add" title="添加标记"></i>
+            <%}else{if(item.ex1 == 1){%>
+            <i class="i-mark i-mark-canintetview" title="可面试"></i>
+            <%}else{if(item.ex1 == 2){%>
+            <i class="i-mark i-mark-unsure" title="待定"></i>
+            <%}else{if(item.ex1 == 3){%>
+            <i class="i-mark i-mark-nonfit" title="不合格"></i>
+            <%}else{if(item.ex1 == 5){%>
+            <i class="i-mark i-mark-unconnect" title="暂未接通"></i>
+              <%}}}}}%> -->
+            <a href="<%=item.url%>" target="_blank"><%=item.trueName%></a>
+          </td>
+           <td style="width:4%"><%= item.sex==0?'女':'男'%></td>
+           <td style="width:4%"><%=item.age%></td>
+           <td style="width:8%"><%=item.education%></td>
+           <td style="width:8%"><%=item.workYear%></td>
+           <td style="width:11%"><%=item.longTimeString%></td>
+           <td style="width:11%"><%=item.targetSalary%></td>
+           <td style="width:12%"><%=item.mobile%></td>
+           <td style="width:27%" resumeid=<%=item.resumeid%> infoid=<%=item.id%>>
+            <% if(item.isInvited == '0'){%>
+              <a class="opra opra-interview" href="javascript:void(0)">面试邀请</a>
+            <%}else{%>
+              <a class="opra opra-seeinterview" href="javascript:void(0)">查看面试邀请</a>
+            <%}%>
+              <a class="opra opra-addgroup" href="javascript:void(0)">分组</a>
+              <a class="opra opra-export" href="javascript:void(0)">导出</a>
+              <a class="opra opra-delete" href="javascript:void(0)">删除</a>
+           </td>  
+           </tr>
+           <% if(item.isInvited == '1'){%>
+              <tr class="showInterview" href="javascript:void(0)" style="display:none;">
+                <td colspan="9">
+                  <div class="interview-msg"><%=item.inviteMsg%></div>
+                </td>
+              </tr>
+            <%}%>
+        <% })%>
+       </tbody>
+     </table> 
+<%}%>
+</script>

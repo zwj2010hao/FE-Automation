@@ -1,0 +1,40 @@
+.editBar{
+  width:100%;
+  margin-top: 10px;
+  height: 40px;
+  .editControl,.pageControl{
+    position: relative;
+    .checkBox{
+      width:17px;
+      height: 17px;
+      border:1px solid $borderColor;
+      border-radius: 4px;
+      text-indent: 0;
+      position: absolute;
+      top:10px;
+      left:10px;
+      i{
+        display: none;
+      }
+    }
+    div.checked{
+      color:$checkedColor;
+      border: 1px solid $checkedColor;
+      i{
+        display: block;
+      }
+    }
+    .setExquisiteBtn,.recoverBtn{
+      margin-left: 50px;
+    }
+  }
+  .pageControl{
+    height: 100%;
+    float: right;
+    margin-right: 20px;
+    z-index: 2;
+    a.pageNum{
+      cursor: pointer;
+    }
+  }
+}

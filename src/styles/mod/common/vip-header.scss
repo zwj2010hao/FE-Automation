@@ -1,0 +1,105 @@
+.vip-header {
+  background-color: $headerBgColor;
+  .header-content {
+    height: 50px;
+    padding-top: 1px;
+    .header-title {
+      float: left;
+      overflow: hidden;
+      padding-left: 5px;
+      a {
+        display: block;
+        float: left;
+        width: 107px;
+        height: 27px;
+        margin-top: 10px;
+        background: url(/images/58logo.png?v=20151111);
+      }
+      h1 {
+        float: left;
+        margin: 13px 0 13px 18px;
+        padding-left: 18px;
+        border-left: 1px solid #fff;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 24px;
+        color: #fff;
+      }
+    }
+    .header-account {
+      margin-top: 18px;
+      float: right;
+      .header-menu {
+        font-size: 12px;
+        overflow: hidden;
+        li {
+          float: left;
+          margin-right: 25px;
+          line-height: 32px;
+          height: 32px;
+          &:last-child {
+            margin-right: 10px;
+          }
+          a {
+            display: block;
+            color: #fff;
+            i {
+              font-size: 16px;
+              vertical-align: middle;
+            }
+            span {
+              vertical-align: middle;
+            }
+          }
+        }
+
+      }
+      .header-username {
+
+      }
+      .header-logout {
+
+      }
+      .header-my {
+
+      }
+    }
+  }
+}
+
+.vip-nav {
+  background: #5d9cec;
+  .nav-menu {
+    font-size: 14px;
+    overflow: hidden;
+    li {
+      float: left;
+      a {
+        transition: color 0.1s ease-in;
+        text-align: center;
+        display: block;
+        width: 100px;
+        height: 40px;
+        line-height: 40px;
+        color: $navColor;
+        &:hover {
+          color: $navHoverColor;
+        }
+      }
+    }
+    .active {
+      background: $navActiveBgColor;
+    }
+  }
+}
+
+.vip-browser-outdated {
+  background: #faf1da;
+  border-bottom: 2px solid #f1e2bc;
+  p {
+    color: #504c2d;
+    font-size: 12px;
+    line-height: 30px;
+    height: 30px;
+  }
+}

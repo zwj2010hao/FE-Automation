@@ -1,0 +1,287 @@
+body{
+	font-family:'Microsoft Yahei',Helvetica,Arial,sans-serif;
+	background-color: #f0f2f5;
+}
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 980px;
+  margin: 0 auto;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: both;
+  height: 0;
+}
+.clearfix {
+  zoom: 1;
+}
+img{
+  border:0;
+}
+em{
+  font-style:normal;
+}
+i{
+  cursor: pointer;
+}
+.icon{
+  text-align: center;
+  display: inline-block;
+}
+//button 
+@mixin button($width,$height,$fs,$braduis){
+  width: $width;
+  height: $height;
+  line-height: $height;
+  font-size: $fs;
+  text-align: center;
+  display: inline-block;
+  border-radius: $braduis;
+}
+%button-class1{
+  //蓝底白字
+  color: #fff;
+  background-color: $light-blue;
+  &:hover{
+    background-color: #548cd4;
+  }
+}
+%button-class2{
+  //白底蓝字
+  color: $light-blue;
+  background-color: #fff;
+  &:hover{
+    border:1px solid #d4d5da;
+  }
+}
+%button-class3{
+  //橘黄底白字
+  color:#fff;
+  background-color: #fc6e51;
+  &:hover{
+    background-color: #db6047;
+  }
+}
+%button-class4{
+  //灰底白字
+  color:#fff;
+  background-color: #c5c9ce;
+}
+%button-class5{
+  //红底白字
+  color:#fff;
+  background-color: #fc6e51;
+  &:hover{
+    background-color: #db6047;
+  }
+}
+%button-class6{
+  //白底灰字
+  color: $deep-gray;
+  background-color: #fff;
+  border:1px solid $deep-gray;
+  &:hover{
+    border:1px solid $deeper-gray;
+  }
+}
+//选择时 圆样式
+%i-circle{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    vertical-align: -5px;
+    background: url('http://img.58cdn.com.cn/zpvip/images/resume-icons.png?v1') no-repeat -76px -28px;
+    *vertical-align: baseline;
+    &:hover{
+      background-position: -104px -28px;
+    };
+}
+%i-circle-click{
+  background-position: -104px -28px;
+}
+//选择时 对号样式
+%i-check{
+    font-size: 14px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    color: #949fab;
+    border: 1px solid #949fab;
+    border-radius: 4px;
+}
+//下拉按钮
+@mixin pulldownbutton($w,$h,$fs){
+    font-size: $fs;
+    line-height: $h;
+    display: inline-block;
+    width: $w;
+    height: $h;
+    text-align: center;
+}
+//下拉选项
+%selType{
+    position:absolute;
+    border: 1px solid $lighter-gray;
+    border-top: none;
+    background-color: #fff;
+    ul{
+      li{
+        float:none;
+        text-align: center;
+        height:30px;
+        line-height: 30px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow:hidden;
+        &:hover{
+          background: #f7f8fc;
+        }
+      }
+    }
+}
+.loading-mask{
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+    background-color: #000;
+    filter: alpha(opacity=50);
+}
+//简历分组弹窗
+.pop-groupmanage{
+  .popgroup-list{
+    width:520px;
+    margin:0 auto;
+    padding:30px 0;
+    ul{
+      height: 195px;
+      overflow: auto;
+    }
+    li{
+      float:left;
+      width:220px;
+      height:38px;
+      line-height: 38px;
+      font-size: 0;
+      color:#949fab;
+      &.odd{
+        margin-right: 58px;
+      }
+      .group-name{
+        display:inline-block;
+        width:153px;
+        height:100%;
+        font-size: 14px;
+      }
+      i{
+        display: inline-block;
+          width: 20px;
+        height:20px;
+        &.i-radio{
+          background: url('http://img.58cdn.com.cn/zpvip/images/resume-icons.png?v1') no-repeat -76px -28px;
+          margin-right: 12px;
+          vertical-align: middle;
+        }
+        &.i-radio-checked{
+          background-position: -104px -28px;
+        }
+        &.i-edit,&.i-delete{
+          color:$light-blue;
+          font-size: 14px;
+        }
+        &.i-edit{
+          margin-right: 15px;
+        }
+        &.i-word{
+          font-size: 12px;
+          width:30px;
+          line-height: 29px;
+          color:$light-blue;
+          margin-left: 5px;
+        }
+        
+      }
+      .view{
+        height:100%;
+      }
+      .edit{
+        padding: 5px 5px;
+        input{
+          width:65%;
+          height:25px;
+          padding-left: 5px;
+          border: 1px solid #E3E4E8;
+          vertical-align: top;
+
+        }
+        i.i-edit-sure{
+          font-size: 18px;
+          color:$light-blue;
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+  .popgroup-add{
+    font-size: 14px;
+    height:70px;
+    background-color: #f6f8fa;
+    line-height: 70px;
+    padding-left: 40px;
+    span{
+      color:#6d747d;
+      &.fs12{
+        font-size: 12px;
+      }
+      &.fw500{
+        font-weight: 500;
+      }
+    }
+    input{
+      width:150px;
+      height:30px;
+      border: 1px solid #E3E4E8;
+      margin:0 24px;
+      padding-left: 5px;
+    }
+    .btn-groupadd{
+      @include button(70px,32px,$fs-middle,4px);
+      @extend %button-class1;
+        margin-right: 10px;
+    }
+  }
+  .popgroup-button{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: right;
+    font-size: 0;
+    a{
+      @include button(85px,32px,$fs-middle,4px);
+      &.btn-cancel{
+        @extend %button-class4;
+        margin-right: 10px;
+      }
+      &.btn-confirm{
+        @extend %button-class5;
+        margin-right: 15px;
+      }
+    }
+  }
+}

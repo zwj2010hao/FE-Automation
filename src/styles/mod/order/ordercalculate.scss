@@ -1,0 +1,142 @@
+.pageright{
+	width: 420px;
+	background-color:#fff;
+	border-top:3px solid $border-shadow;
+	border-radius: 5px;
+	float:right;
+    .non-goods{
+        td{
+            text-align: center;
+            font-size:20px;
+            height: 150px;
+            line-height: 150px;
+            color: $light-blue;
+        }
+    }
+	.disabled{
+		background-color: $lighter-gray;
+		cursor: default;
+		&:hover{
+			background-color: $lighter-gray;
+		};
+	}
+	.p-right-head{
+		height:45px;
+		line-height: 45px;
+		padding-left: 20px;
+		color: $light-blue;
+		border-bottom:1px solid $lighter-gray; 
+	}
+    .i-check{
+                *vertical-align:middle;
+                @extend %i-check;
+                margin-left: 10px;
+            }
+	table{
+		width: 100%;
+		font-size: 14px;
+        margin-bottom: 25px;
+        .pl10{
+            padding-left: 10px;
+        }
+		.even{
+			background-color: #f6f8fa;
+		}
+		thead{
+			tr{
+				height: 35px;
+				line-height: 35px;
+			}
+			th{
+				text-align: left;
+			}		
+		}
+		tbody{
+            tr{
+                height:  40px;
+                padding-top: 15px;
+            }
+            td{
+                text-align: left;
+            }
+			.quantity-form{
+                width: 110px;
+				position: relative;
+				overflow: hidden;
+                top: 9px;
+                .decrement,.increment{
+                    display: inline-block;
+                    width: 26px;
+                    height:26px;
+                    line-height: 26px;
+                    border:1px solid #949fab;
+                    border-radius: 3px;
+                    color: #949fab;
+                    text-align: center;
+                }
+                .decrement{
+                    border-right: 0;
+                }
+                .increment{
+                    border-left: 0;
+                }
+                .disabled{
+                    @extend %button-class4;
+                    cursor:default;
+                }
+                .itxt{
+                    position: absolute;
+                    left: 26px;
+                    top: 0;
+                    border: 1px solid #949fab;
+                    width: 56px;
+                    height: 26px;
+                    line-height: 26px;
+                    text-align: center;
+                    font-size: 12px;
+                    color: #333;
+                    -webkit-appearance: none;
+                    padding: 0;
+                }										
+			}
+            
+		}
+	}
+    .opra-order{
+        border-top:1px solid $lighter-gray;
+        height: 40px;
+        line-height: 40px;
+        a{
+            @include button(45px,22px,$fs-small,10px);
+            @extend %button-class6;
+        }
+    }
+    .result-order{
+        padding: 25px 0 0 20px;
+        .totalNum{
+            display: inline-block;
+            padding: 0 5px;
+            em{
+                color: $price-red;
+            }
+        }
+        .totalPrice{
+            padding-right: 20px;
+            float: right;
+            color:$price-red;
+        }
+    }
+    .submit{
+        margin-top: 10px;
+        a{
+           @include button(100%,60px,18px,0px);
+           @extend %button-class3; 
+           &.disabled{
+                    @extend %button-class4;
+                    cursor:default;
+            }
+        }
+
+    }
+
+}

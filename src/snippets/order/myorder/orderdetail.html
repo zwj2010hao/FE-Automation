@@ -1,0 +1,44 @@
+<script type="text/html">
+	<div class="order-detail">
+		<ul>
+			<li class="orderNum">订单编号：<em><%=orderdetail.order.orderid%></em></li>
+			<li class="orderTime">
+			<% if(orderdetail.order.addtime != null){%>
+				<span>下单时间：<%=orderdetail.order.addtime%></span>
+			<%}%>
+			<% if(orderdetail.order.paytime != null){%>
+				<span>支付时间：<%=orderdetail.order.paytime%></span>
+			<%}%>	
+			</li>
+			<li class="orderState">订单状态：
+				<%switch(orderdetail.order.state){case "-1":%>
+					<span class="type-close">已关闭</span>
+				<%break;case "1":%>
+				<span class="type-success">支付成功</span>
+				<%break;case "2":%>
+				<span class="type-unpay">待支付</span>
+				<%break;default:%>
+				<span class="type-abnor">订单异常</span><span class="abnor-tip">订单异常，请稍后查看！</span>
+				<%}%>
+			</li>
+			<li class="li-head">订单类型</li>
+			<li class="li-content">订单类型：线上提单</li>
+			<li class="li-head">支付信息</li>
+			<li class="li-content">支付信息：余额付款</li>
+			<li class="li-head">服务信息</li>
+			<li class="li-content">服务城市：全国</li>
+			<li class="li-content">服务时长：365天<% if(orderdetail.order.starttime != null){%>
+				（开通日期：<%=orderdetail.order.starttime%>，到期日期：<%=orderdetail.order.endtime%>）
+			<%}%>
+			</li>
+			<li class="li-head">商品信息</li>
+			<li class="li-content">商品名称：订购商品</li>
+			<li class="li-content items-content">商品内容：
+				<% _.each(orderdetail.items,function(item){%>
+					<span><%=item.resName%>：<%=item.count%><%=item.unit%></span>
+				<%})%>
+			</li>
+			<li class="orderTotalMoney">商品总价：<em><%=orderdetail.order.price%>元</em></li>
+		</ul>
+	</div>
+</script>

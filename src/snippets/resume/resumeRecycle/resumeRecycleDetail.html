@@ -1,0 +1,45 @@
+<script type="text/html">
+<% if(resumeInfo.length == 0) {%>
+<div class="no-content"><i class="icon icon-sign-warn">&nbsp</i>回收站中没有简历哦</div>
+<%}else{%>
+<table border="0" cellspacing='0' class="item-list">
+      <thead>
+         <tr class="even">
+           <th class="jobtofind choose-all"><i class="i-check icon">&nbsp</i>求职意向</th>
+           <th class="seeker-name">姓名</th>
+           <th class="seeker-gender">性别</th>
+           <th class="seeker-age">年龄</th>
+           <th class="seeker-edu">学历</th>
+           <th class="seeker-exp">工作经验</th>
+           <th class="movein-time">移入时间</th>
+           <th class="operation">操作</th>
+         </tr>
+       </thead>
+       <tbody>
+       <% _.each(resumeInfo,function(item,index){%>
+        <% if(index%2 == 0){%>
+         <tr infoid=<%=item.id%>>
+      	<%}else{%>
+         <tr class="even" infoid=<%=item.id%>>
+      	 <%}%>
+          <td class="item-job" style="width:25%">
+            <i class="i-check icon">&nbsp</i>
+            <a href="<%=item.url%>" class="item-name" target="_blank" ><%=item.targetPosition%></a>
+          </td>
+           <td style="width:8%"><%=item.trueName%></td>
+           <td style="width:5%"><%= item.sex==0?'女':'男'%></td>
+           <td style="width:5%"><%=item.age%></td>
+           <td style="width:10%"><%=item.education%></td>
+           <td style="width:10%"><%=item.workYear%></td>
+           <td style="width:10%"><%=item.delTimeString%></td>
+           <td style="width:27%">
+              <a class="opra opra-recovery" href="javascript:void(0)">恢复</a>
+              <!-- <a class="opra opra-moveto" href="javascript:void(0)">转移到</a> -->
+              <a class="opra opra-delete" href="javascript:void(0)">彻底删除</a>
+           </td>  
+          </tr> 
+       	<%})%>
+       </tbody>
+     </table> 
+<%}%>     
+</script>

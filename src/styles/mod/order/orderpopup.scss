@@ -1,0 +1,75 @@
+.pop-pay{
+	.priceblue{
+		color: $light-blue;
+	}
+	.pricered{
+		color: $hint-red;
+	}
+	.popup-enough,.popup-unenough{
+		p{
+			font-size:25px;
+			color: $light-blue;
+			i{
+				padding-right: 10px;
+			}
+		}
+		padding: 15px 0;
+		text-align: center;
+		span{
+			display: block;
+			padding: 2px 0;
+		}
+		.pop-btn{
+			padding-top: 20px;
+			a{
+				@include button(85px,32px,$fs-middle,4px);
+				&.cancel,&.cancel-fresh{
+					@extend %button-class4;
+					margin-right: 10px;
+				}
+				&.confirm{
+					@extend %button-class1;
+					margin-right: 15px;
+				}
+			}
+		}
+		.pop-tip{
+			text-align: left;
+    		padding-left: 85px;
+			padding-top: 10px;
+			font-size: 14px;
+			color: $deep-gray;
+		}
+	}
+}
+.delete-pop{
+	p{
+		text-align: center;
+		padding-top: 20px;
+	}
+	.pop-button{
+		text-align:center;
+		font-size: 0;
+		padding: 20px 0;
+		a{
+			@include button(85px,32px,$fs-middle,4px);
+			&.cancel{
+				@extend %button-class4;
+				margin-right: 10px;
+			}
+			&.confirm{
+				@extend %button-class1;
+				margin-right: 15px;
+			}
+		}
+	}
+}
+.unchooseany{
+	text-align: center;
+	padding-top: 30px;
+	.icon-sign-warn{
+		font-size: 25px;
+		color: #ffce54;
+		margin-right: 20px;
+	}
+}

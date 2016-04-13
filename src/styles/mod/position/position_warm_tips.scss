@@ -1,0 +1,35 @@
+.warmTips{
+  width:100%;
+  background: $conBg;
+  border-top: 2px solid $posBorderColor;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-top: 10px;
+  .title{
+    width: 100%;
+    height: 14px;
+    padding: 17px 10px;
+    color:$sectionTitleColor;
+    font-size: 16px;
+  }
+  .tipsCont{
+    width: 100%;
+    border-top: 1px solid $posBorderColor;
+    color:$footerColor;
+    ul{
+      width: 100%;
+      margin: 0 auto;
+      border-top: 1px solid $posBorderColor;
+      padding: 20px 0;
+    }
+    li{
+      height: 25px;
+      line-height: 25px;
+      text-indent: 30px;
+    }
+    a{
+      color:$sectionTitleColor;
+      cursor: pointer;
+    }
+  }
+}

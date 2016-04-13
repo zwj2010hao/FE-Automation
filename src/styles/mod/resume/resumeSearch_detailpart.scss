@@ -1,0 +1,340 @@
+//detial-head
+.detail-head{
+	padding-bottom: 10px;
+	.number-hint{
+		font-size: $fs-middle;
+		text-align: right;
+		padding-bottom: 10px;
+		color: $light-gray;
+	}
+	ul{
+		padding-left: 20px; 
+		background-color: #e3e4e8;
+		border-radius: 4px;
+	}
+	li{
+		color: $light-gray;
+		font-size:$fs-middle;
+		height: 36px;
+		line-height: 36px;
+		width: 110px;	
+		cursor:pointer;
+	}
+}
+.detail-content{
+	color: $light-gray;
+	background-color: #fff;
+	font-size: $fs-middle;
+	table{
+		width: 100%;
+	}
+	.even{
+		background-color: #f6f8fa;
+	}
+	.no-content{
+		height:300px;
+		padding-top:80px;
+		padding-left:100px;
+		font-size: 20px;
+		.icon-sign-warn{
+			color:#5d9cec;
+			margin-right: 10px;
+		}
+		ul{
+			margin-top: 50px;
+			li{
+				padding:10px 0;
+			}
+		}
+	}
+	.item-job{
+		padding-left: 10px;
+		position: relative;
+		.icon-lightSpot{
+			color: #FA7319;
+			font-size: 12px;
+			margin: 0 0 0 5px;
+		}
+		.icon-picCount{
+			font-size: 12px;
+			color: #00AA00;
+			margin: 0 0 0 5px;
+		}
+		.icon-validateMobile{
+			display:inline-block;
+			background: url('http://img.58cdn.com.cn/zpvip/images/resume-icons.png?v1') no-repeat -127px -50px;
+			height: 20px;
+			width: 20px;
+			margin-left:5px;
+			vertical-align: bottom;
+		}
+		a{
+			color:$light-blue;
+		}
+	}
+	thead th{
+		text-align: left;
+		height: 48px;
+		vertical-align: middle;
+		border-top: 2px solid $border-shadow;
+		border-bottom: 1px solid $border-shadow;
+		border-radius: 4px;
+	}
+	tr td{
+		height: 48px;
+		vertical-align: middle;
+		text-align: left;
+	}
+	.tr-row1{
+	    *position: relative;
+		*z-index: 1;
+	}
+	.jobtofind{
+		padding-left: 10px;
+	}
+	.opra-download{
+		@include button(62px,25px,$fs-small,2px);
+		@extend %button-class1;
+	}
+	.opra-alreadydown{
+		@include button(62px,25px,$fs-small,2px);
+		@extend %button-class4;
+		cursor:default;
+	}
+	.icon-checked:before {
+    padding-left: 2px;
+	}
+	.showDtl{
+		background-color: #F9F9FA;
+		border: 1px solid #DEE1E9;
+		position: relative;
+		text-align: center;
+		line-height: 25px;
+		font-weight: 400;
+		td{
+		padding: 10px 30px;
+		}
+		.tle{
+			float: left;
+			width: 70px;
+		}
+		.dtl{
+			padding-left: 80px;
+			*margin-top: -25px;
+		}
+		.operDiv{
+			width: 95px;
+			height: 32px;
+			line-height: 32px;
+			margin: 15px 0;
+			border: 1px solid $border-shadow;
+			text-align: center;
+			background-color: #FBFBFB;
+			border-radius: 4px;
+			i{
+				border:none;
+				display: inline-block;
+				margin-right: 5px;
+			}
+			a{
+				color: $light-gray;
+			}
+		}
+	}
+	.hoverInfo{
+		z-index: 99;
+		right: 80px;
+		position: absolute;
+		background-color: #FFF;
+		white-space: normal;
+		#arrow{
+			position: absolute;
+			left: 45px;
+			top: -22px;
+			z-index: 5;
+			em,span{
+				display: block;
+				width: 0;
+				height: 0;
+				overflow: hidden;
+				position: relative;
+			}
+			em{
+				border-color: transparent #f70 transparent transparent;
+				border-style: dashed solid dashed dashed;
+				border-width: 10px;
+			}
+			span{
+				border-color: transparent #fff transparent transparent;
+				border-style: dashed solid dashed dashed;
+				border-width: 10px;
+				top: -20px;
+				left: 3px;
+			}
+		}
+		.tipsbox{
+			width: 500px;
+			position: absolute;
+			top: -33px;
+			left: 64px;
+			border: 2px solid #f70;
+			background: #FFF;
+			z-index: 4;
+			color: #282828;
+			padding: 10px 30px 24px;
+		}
+		.xboxcontent{
+			position: relative;
+			zoom: 1;
+			.name,.sex-age{
+				line-height: 46px;
+				color: #282828;
+			}
+			.name{
+				font-size: 20px;
+			}
+			.sex-age{
+				font-size: 16px;
+			}
+			.res-per-info{
+				position: absolute;
+				right: 0;
+				top: -10px;
+				padding-right: 92px;
+				color: #828282;
+				text-align: left;
+				font-size: 12px;
+				line-height: 46px;
+				.per-par{
+					background-color: #E1E1E1;
+					height: 7px;
+					width: 87px;
+					position: absolute;
+					right: 0;
+					top: 19px;
+					font-size: 0;
+				}
+				.per-child{
+					width: 80%;
+					height: 7px;
+					background-color: #F70;
+					display: block;
+				}
+			}
+			ul{
+				margin-bottom: 8px;
+			}
+			li{
+				float: left;
+				padding-right: 45px;
+				height: 22px;
+				line-height: 22px;
+				font-family: simsun;
+				font-size: 12px;
+				color: #747474;
+				white-space: nowrap;
+			}
+			li.hope-job,li.fln{
+				clear: both;
+				float: none;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+		}
+		.time-tab{
+			border: dotted #C8CACC;
+			border-width: 1px 0;
+			padding-bottom: 13px;
+			p{
+			line-height: 20px;
+			margin-top: 9px;
+			font-size: 14px;
+			}
+			.job-time,.job-num{
+				color: #FF0522;
+				font-weight: 700;
+			}
+		}
+		.ability-con{
+			padding: 5px 0 0;
+			li{
+				float: left;
+				display: inline-block;
+				height: 28px;
+				line-height: 28px;
+				margin-bottom: 4px;
+				white-space: nowrap;
+				.green{
+					height: 28px;
+					padding-right: 20px;
+					position: relative;
+					zoom: 1;
+					line-height: 28px;
+					float: left;
+					color: #1a9b1a;
+					span{
+						display: inline-block;
+						height: 27px;
+						line-height: 27px;
+						border: solid;
+						border-width: 0 0 1px 2px;
+						padding: 0 10px;
+						border-color: #C6DCC6 #68BB68;
+						background-color: #DCF5DC;
+						color: #007300;
+					}
+				}
+			}
+			em{
+				display: block;
+				position: absolute;
+				right: 1px;
+				height: 27px;
+				width: 20px;
+				background: url(http://pic2.58.com/ui7/job/hire/ability-img.png) 0 -30px no-repeat;
+				border: 0;
+				margin: 0;
+			}
+		}
+		.intr-con{
+			line-height: 20px;
+			margin-top: 10px;
+			color: #282828;
+			font-size: 12px;
+		}
+	}
+}
+
+.detail-head,.detail-content,.detail-foot{
+	.i-check{
+		@extend %i-check; 
+	}
+}
+.detail-foot{
+	padding-left:10px;
+	padding-top:12px;
+	margin-bottom: 180px;
+	height: 35px;
+	line-height: 35px;
+	.batch-download,.batch-see{
+		@include button(88px,35px,$fs-middle,6px);
+		margin-right: 10px;
+		a{
+			color:#fff;
+		}
+	}
+	.batch-download{
+		@extend %button-class3;
+	}
+	.batch-see{
+		@extend %button-class1;
+	}
+	.page-num{
+		font-size: $fs-middle;
+	}
+	.choose-all{
+		vertical-align: middle;
+	}
+
+}

@@ -1,0 +1,103 @@
+.vip-resume-feedback {
+  .section-content {
+    height: 430px;
+  }
+  .section-padding {
+    padding: 40px 0;
+  }
+  .resume-feedback-list {
+    margin-bottom: 5px;
+    li {
+      overflow: hidden;
+      margin-bottom: 15px;
+      *vertical-align: middle;
+      h5 {
+        font-size: 14px;
+        line-height: 18px;
+        height: 18px;
+        color: $fontColorGray;
+        float: left;
+        width: 130px;
+        text-align: right;
+      }
+      .resume-feedback-bar {
+        float: left;
+        width: 270px;
+        height: 18px;
+        margin-left: 13px;
+        position: relative;
+        color: $fontColorGray;
+        .resume-feedback-fill {
+          position: relative;
+          height: 18px;
+          transition: width linear 1s;
+          .resume-feedback-text {
+            position: absolute;
+            display: block;
+            width: 30px;
+            height: 18px;
+            right: -40px;
+            top: 0;
+            line-height: 18px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    .resume-feedback-fill {
+      background: #e1e4ea;
+    }
+    .interview {
+      .resume-feedback-fill {
+        background: #5d9cec;
+      }
+    }
+    .undetermined {
+      .resume-feedback-fill {
+        background: #e1e4ea;
+      }
+    }
+    .unconnectable {
+      .resume-feedback-fill {
+        background: #e1e4ea;
+      }
+    }
+    .read {
+      .resume-feedback-fill {
+        background: #b8d9ff;
+      }
+    }
+    .unread {
+      .resume-feedback-fill {
+        background: #fb6e50;
+      }
+    }
+    .resume-feedback-button {
+      margin-top: 5px;
+    }
+  }
+  .resume-feedback-card {
+    margin: 30px 20px 0;
+    background: #f1f7fd;
+    padding: 32px 0 38px;
+    text-align: center;
+    h4 {
+      color: $fontColorLightBlue;
+      font-size: 22px;
+      line-height: 30px;
+      height: 30px;
+      margin-bottom: 14px;
+    }
+    p {
+      color: $fontColorGray;
+      font-size: 14px;
+      line-height: 22px;
+      margin-bottom: 21px;
+    }
+  }
+  .resume-feedback-button {
+    .vip-button {
+      margin: 0 auto;
+    }
+  }
+}

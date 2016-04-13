@@ -1,0 +1,97 @@
+<script type="text/html">
+<% if(resumeInfo.length == 0) {%>
+<div class="no-content"><i class="icon icon-sign-warn">&nbsp</i>暂时没有符合您条件的简历哦！</div>
+<%}else{%>
+  <% _.each(resumeInfo,function(item,index){%>
+    <%if(index==0){%>
+      <div class="item-job-card" style="border-top:0">
+    <%}else{%>
+      <div class="item-job-card">
+    <%}%>  
+        <div class="post-head">
+          <span class="deliver-pos">投递职位:<%=item.targetPosition%></span>
+          <span class="deliver-time">投递时间：<%=item.longTimeString%></span>
+        </div>
+        <div class="pos-dtl">
+          <div class="dtl-left">
+            <i class="icon pos-check" infoid=<%=item.id%> resumeid=<%=item.resumeid%>></i>
+            <ul>
+              <li class="seeker-image">
+                <% if(item.sex == 1){%>
+                  <img src="/images/rs-default-man.png?v1" width="80px" height="80px" />
+                <%}else{%>
+                   <img src="/images/rs-default-woman.png?v1" width="80px" height="80px" />
+                <%}%>
+              </li>
+              <li class="seeker-name"><a href=<%=item.url%> target="_blank"><%=item.trueName%></a>
+              <%if(item.readflag == 1){%>
+                  <i class="icon icon-mail-open"></i>
+              <%}else{%>
+                  <i class="icon icon-mail" infoid=<%=item.id%>></i>   
+              <%}%>
+              </li>
+              <li class="seeker-identification">
+            <%if(item.ex1 == 1){%>
+            <i class="i-mark i-mark-canintetview" title="可面试"></i>
+            <%}else{if(item.ex1 == 2){%>
+            <i class="i-mark i-mark-unsure" title="待定"></i>
+            <%}else{if(item.ex1 == 3){%>
+            <i class="i-mark i-mark-nonfit" title="不合格"></i>
+            <%}else{if(item.ex1 == 5){%>
+            <i class="i-mark i-mark-unconnect" title="暂未接通"></i>
+            <%}else{%>
+            <i class="i-mark i-mark-none"></i>
+            <%}}}}%>   
+              </li>
+          </ul>
+          </div>
+          <div class="dtl-middle">
+            <ul>
+              <li class="info-title">基本情况</li>
+              <li class="info-profile"><%= item.sex==0?'女':'男'%>·<%=item.age%>岁·<%=item.education%>·工作经验：<%=item.workYear%>·期望薪资：<%=item.targetSalary%></li>
+              <% if(item.experiences.length > 0){%>
+              <li class="info-title">工作经验</li>
+              <%_.each(item.experiences,function(subitem){%>
+              <li><%= subitem.startDate%>至<%= subitem.endDate%>[<%= subitem.persistTime%>]&nbsp&nbsp<%= subitem.company%>&nbsp<%= subitem.positionName%></li>
+              <%})%>
+              <%}%>
+            </ul>
+          </div>
+          <div class="dtl-right">
+            <ul>
+              <li>
+              <% if(item.hideMobile =="0") {%>
+                <span class='seeker-phone'><i class='icon icon-phone'></i>
+                <%= item.mobile%>
+                </span>
+                <span class='interview' resumeid=<%=item.resumeid%>>邀请面试</span>
+            <%}else{%>
+                <span class='seeker-phone'><i class='icon icon-phone'></i>
+                <span class="hidePhone"><%= item.mobile.replace(/[0-9]{4}$/g,'****')%></span>
+                </span>
+                <span class='showPhone' phone=<%= item.mobile%> sign=<%= item.sign%> resumeid=<%=item.id%>>查看联系方式</span>
+                <span class='interview' resumeid=<%=item.resumeid%> style="display:none">邀请面试</span>
+            <%}%>
+              </li>
+              <li>
+                <a class="see-detail" href=<%=item.url%> target="_blank">查看详情</a>
+                <a class="add-group"  href="javascript:void(0)" infoid=<%=item.id%>>分组</a>
+                <a class="add-mark"  href="javascript:void(0)" infoid=<%=item.id%>>标记</a>
+                <a class="export" href="javascript:void(0)" resumeid=<%=item.resumeid%>>导出</a>
+                <a class="delete" href="javascript:void(0)" infoid=<%=item.id%>>删除</a>
+              </li>
+              <li class="marktype" style="display: none">
+              <ul>
+                <li v="1"><i class="i-mark i-mark-canintetview"></i>可面试</li>
+                <li v="2"><i class="i-mark i-mark-unsure"></i>待定</li>
+                <li v="3"><i class="i-mark i-mark-nonfit"></i>不合适</li>
+                <li v="5"><i class="i-mark i-mark-unconnect"></i>暂未接通</li>
+              </ul>
+            </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <%})%>
+ <%}%>
+</script>

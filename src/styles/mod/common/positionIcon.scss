@@ -1,0 +1,45 @@
+i.positionIcon{
+  display: inline-block;
+}
+.positionIcon {
+  width: 16px;
+  height: 16px;
+  background: url('http://img.58cdn.com.cn/zpvip/images/vip_position_icon.png?v=1') no-repeat top left;
+}
+.positionIcon.noIcon {
+  background-position: 0 0;
+}
+.positionIcon.showBoxCloseBtn {
+  background-position: 0 -31px;
+  width: 11px; height: 11px;
+}
+.positionIcon.tipIcon {
+  background-position: 0 -57px;
+  width: 26px; height: 26px; }
+.positionIcon.yesIcon {
+  background-position: 0 -98px;
+}
+
+.positionIcon.checkNone {
+  width:18px;
+  height: 18px;
+  background-position: 0 -152px;
+}
+.positionIcon.checked {
+  width:18px;
+  height: 18px;
+  background-position: 0 -124px;
+}
+.positionIcon.deletePosBtn {
+  background-position: 0 -180px;
+  height: 16px;
+}
+.positionIcon.editIcon {
+  background-position: 0 -206px;
+  width: 15px;
+  height: 19px;
+}
+.positionIcon.shareBtn {
+  background-position: 0 -235px;
+  height: 14px;
+}

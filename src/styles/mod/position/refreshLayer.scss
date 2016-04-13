@@ -1,0 +1,300 @@
+$fontColorDarkGray_refresh:#6d747d;
+$fontColorGrey_refresh:#949fab;
+$fontColorOrange_refresh:#fc6e51;
+$fontBlue_refresh:#5d9cec;
+.layer_showbox{
+  color:$fontColorDarkGray_refresh;
+  font-size: 14px;
+}
+.fontDarkGrey{
+  color:$fontColorDarkGray_refresh;
+}
+.fontGrey{
+  color:$fontColorGrey_refresh;
+}
+.fontBuleRefresh{
+  color:$fontBlue_refresh;
+}
+.refreshWrongTip{
+  width:80%;
+  height: 100%;
+  line-height: 50%;
+  text-align: center;
+  margin: 0 auto;
+  i{
+    position: relative;
+    top:8px;
+    margin-right: 10px;
+  }
+}
+.openRefresh{
+  width:96%;
+  padding: 2px 0 10px 10px;
+  margin: 0 auto;
+}
+.refreshCon{
+  margin-top: 10px;
+  width: 98%;
+  height: 392px;
+  position: relative;
+  .refreshUl{
+    width:100%;
+    height: 40px;
+    border-top:2px solid $posBorderColor;
+    background: #f6f8fa;
+    li{
+      float: left;
+      width:120px;
+      height: 100%;
+      a{
+        float: left;
+        width: 100%;
+        height: 100%;
+        line-height: 40px;
+        text-align: center;
+      }
+    }
+    li.cur{
+      a{
+        border-top: 2px solid $fontBlue_refresh;
+        width:100%;
+        height: 100%;
+        background: #fff;
+        margin-top: -2px;
+      }
+    }
+  }
+  .immediatelyCon{
+    width:100%;
+    height: 85%;
+    text-align: center;
+    position: relative;
+    table{
+      margin-top: 10px;
+      th{
+        border:none
+      }
+    }
+    p{
+      margin-bottom: 10px;
+      i{
+        position: relative;
+        top:8px;
+        margin-right: 10px;
+      }
+    }
+  }
+  .appointCon{
+    width:100%;
+    height:85%;
+    display: none;
+    position: relative;
+    .smartAppointCon,.selfAppointCon{
+      width:97%;
+      display: none;
+    }
+   .active div{
+      display: block;
+    }
+    p{
+      width:100%;
+      height: 20px;
+      margin-top: 10px;
+      i{
+        position: relative;
+        top:4px;
+        left:-4px;
+      }
+      span{
+        color:#c5c9ce;
+      }
+    }
+  }
+}
+
+.appointWrongTips{
+  line-height: 40px;
+  text-indent: 20px;
+}
+.selfAppointCon{
+  //自主预约弹层样式
+  width:100%;
+  margin-top: 10px;
+  height: 40px;
+  line-height: 40px;
+  color:#949fab;
+  .timeSel{
+    float: left;
+    margin-right: 10px;
+    span{
+      float: left;
+      margin-right: 8px;
+    }
+    .select{
+      width:65px;
+      z-index: 99;
+      .selectUl{
+        width:67px;
+        display: none;
+        max-height: 200px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        li,a{
+          width:65px;
+        }
+      }
+    }
+    .active {
+      .selectUl{
+        display: block;
+      }
+    }
+  }
+  .requestTips{
+    width:150px;
+    font-size: 12px;
+    color:#c5c9ce;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .onlineDay{
+    width:100%;
+    i{
+      position: relative;
+      top:4px;
+      margin: 0 5px 0 12px;
+    }
+  }
+
+}
+.appointWayCon.active{
+  height: 250px;
+}
+.smartAppointCon{
+  width:100%;
+  height: 200px;
+  .smart_con{
+    float: left;
+    height: 213px;
+    margin-top: 10px;
+    position: relative;
+    margin-left: 10px;
+    .canAppointPosTable,.alreadyAppointPosTable{
+      width:100%;
+      height:192px;
+      overflow-y: auto;
+    }
+    thead,table{
+      border-top: none;
+    }
+    th{
+      height: 5px;
+      padding: 7px 0;
+      a{
+        padding: 3px 6px;
+        float: right;
+        margin-right: 10px;
+        text-indent: 0;
+      }
+      a.titleSmartPos{
+        float: left;
+        width:100%;
+        height: 100%;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+        overflow:hidden;
+        padding: 0;
+      }
+      span{
+        display: inline-block;
+        width:55%;
+        height: 100%;
+        text-indent: 0;
+        line-height: 29px;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+      }
+    }
+  }
+  .canAppointPosDiv{
+    width:23%;
+    border: 1px solid $posBorderColor;
+  }
+  .alreadyAppointPosCon{
+    width:72%;
+    border: 1px solid $posBorderColor;
+    .refreshTimeTh{
+      .refreshTimes{
+        width:30%;
+      }
+      .btnEditArr{
+        width:50%;
+        height: 100%;
+        float: right;
+        line-height: 16px;
+        span{
+          display: inline-block;
+          width:100%;
+          text-indent: 0;
+        }
+        a{
+          width:14px;
+          height: 14px;
+          line-height: 12px;
+          padding: 5px;
+          float: left;
+        }
+      }
+    }
+
+  }
+  .btnDiv{
+    width: 100%;
+    height: 35px;
+    border-top: 1px solid $posBorderColor;
+    background: #f6f8fa;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    a{
+      padding: 3px 6px;
+      float: right;
+      margin-right: 10px;
+      margin-top: 3px;
+    }
+  }
+}
+table.conformSelfRefTable{
+  margin-top: 10px;
+}
+.btnBar{
+  width:100%;
+  height:40px;
+  line-height: 40px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  a{
+    float: right;
+    margin-right: 10px;
+  }
+  #refreshImmediateBtn{
+    padding:6px 12px;
+  }
+}
+.colorOrange{
+  color:$fontColorOrange_refresh;
+}
+span.appointRefTips{
+  float: right;
+  margin-right: 20px;
+}
+.confTitle a{
+  float: left;
+  width: 170px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

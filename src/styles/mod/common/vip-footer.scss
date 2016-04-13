@@ -1,0 +1,24 @@
+.vip-footer {
+  background: $footerBgColor;
+  padding: 22px 0 34px 0;
+  .footer-links {
+    text-align: center;
+    font-size: 12px;
+    line-height: 12px;
+    a {
+      margin-left: 10px;
+      margin-right: 10px;
+      color: $footerColor;
+    }
+    .footer-separator {
+      color: $footerSeparator;
+    }
+  }
+  .footer-copyright {
+    text-align: center;
+    font-size: 12px;
+    line-height: 12px;
+    margin-top: 12px;
+    color: $footerColor
+  }
+}

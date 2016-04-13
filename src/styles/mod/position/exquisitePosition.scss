@@ -1,0 +1,260 @@
+a{
+  cursor: pointer;
+}
+.contain{
+  width: 100%;
+  color:$titleColor;
+}
+.itemNum{
+  line-height: 34px;
+  margin-left: 10px;
+  position: relative;
+}
+.hiddenInp{
+  display: none;
+}
+.starTips{
+  position: absolute;
+  top:-50px;
+  width: 300px;
+  background: #fff;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid $posBorderColor;
+  border-radius: 4px;
+  line-height: 1.5em;
+  color:#6d747d;
+  display: none;
+}
+.posSel,.helpHire{
+  margin-right: 10px;
+}
+
+.posInfoColumn{
+    margin-top: 12px;
+}
+/*精品职位中table特有样式*/
+th.posInfoCol{
+  text-indent: 0;
+}
+th.infoProtoTh{
+  img{
+    vertical-align: text-top;
+  }
+  padding: 0;
+  text-indent: 0;
+}
+th.promoTh{
+  text-align: center;
+  text-indent: 0;
+  a{
+    padding: 5px;
+  }
+  a.freshBtn{
+    margin-top: 8px;
+  }
+}
+th{
+  font-size: 14px;
+  p{
+    line-height: 21px;
+    .icon{
+      color:#e3e4e8;
+      position: relative;
+      margin-right: 5px;
+    }
+    i.lighten{
+      color:#ffce54;
+    }
+  }
+  a.setAcptCdt{
+    display: inline-block;
+    width:100%-10;
+    margin-top: 15px;
+  }
+  .editDiv{
+    a{
+      float: left;
+      margin-left: 20px;
+      margin-top: 5px;
+    }
+    .shareBtn{
+      display: inline-block;
+      margin: 8px  0  0 30px;
+    }
+    .deletePosBtn{
+      margin: 7px 0 0 30px;
+    }
+  }
+.posId,.refreshTime{
+    margin-left: 20px;
+}
+.applyNum,.readCount{
+    line-height: 23px;
+}
+.hasCheckBox p{
+    margin-left: 25px;
+    //position: relative;
+    line-height: 20px;
+    .icon{
+      position: absolute;
+      left:-20px;
+      top:2px;
+      color:#e3e4e8;
+    }
+    i.lighten{
+      color:#ffce54;
+    }
+}
+  /*提升效果区域样式*/
+.exquisiteTip{
+  float: left;
+  width:50%;
+}
+.promoteBtnArr{
+  width:80%;
+  margin-top: 5px;
+  a{
+    padding: 4px 8px;
+  }
+  .freshBtn{
+    float: right;
+  }
+}
+
+  /*编辑区域样式*/
+  div.editColumn{
+    width:100%-10;
+    height: 100%;
+    margin: 0 auto;
+    font-size: 14px;
+    a{
+      color:#5d9cec;
+      line-height: 25px;
+      text-indent: 0;
+    }
+    a.shareBtn{
+      float: right;
+      margin-right: 10px;
+    }
+    p{
+      margin-top: 10px;
+    }
+
+  }
+}
+.tips{
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 12px;
+  i{
+    font-style: normal;
+    color:#fc6e51;
+  }
+}
+
+.star_display{
+  text-indent: 25px;
+  position: relative;
+  line-height: 35px;
+  .checkBox{
+    position: absolute;
+    top:8px;
+    left:0;
+    width:16px;
+    height: 16px;
+    border: 1px solid $posBorderColor;
+    border-radius: 3px;
+    i{
+      display: none;
+    }
+  }
+  div.checked{
+    border: 1px solid $checkedColor;
+    color:$checkedColor;
+    i{
+      display: block;
+      position: absolute;
+      top:0;
+      left:-23px;
+    }
+  }
+}
+.search_input{
+  width: 215px;
+  margin-left: 10px;
+  position: relative;
+  input{
+    width: 100%-10;
+    height: 20px;
+    border:  1px solid $posBorderColor;
+    border-radius: 4px;
+    padding: 5px 10px;
+    position: absolute;
+    top:0;
+    left: 0;
+  }
+  i{
+    position: absolute;
+    top:0;
+    right:0;
+    width: 32px;
+    height: 30px;
+    background: $conBg;
+    border: 1px solid $posBorderColor;
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+    line-height: 30px;
+    text-align: center;
+  }
+}
+.search .helpHire{
+  width:150px;
+}
+.shareActive .wx-share-main{
+  display: block;
+}
+.wx-share-main {
+  display: none;
+  width: 325px;
+  height: 115px;
+  border: 1px solid #ddd;
+  background: #fff;
+  position: absolute;
+  top: 109px;
+  left: 34px;
+  z-index: 102;
+  box-shadow: 2px 2px 0 #f1f1f1;
+  .ico-arr-xxshare {
+    display: block;
+    width: 17px;
+    height: 9px;
+    overflow: hidden;
+    background: url(http://img.58cdn.com.cn/newvip/images/ico-arr-xxshare.gif) no-repeat 0 0;
+    position: absolute;
+    top: -9px;
+    left: 30px;
+  }
+  .img-share-ewm {
+    width: 80px;
+    height: 80px;
+    float: left;
+    border: 1px solid #eee;
+    margin: 15px 0 0 15px;
+    padding: 1px;
+  }
+  .img-share-ewm img {
+    height: 100%;
+    width: 100%;
+  }
+  .msg-share-ewm {
+    font-size: 12px;
+    line-height: 22px;
+    float: left;
+    margin-top: 33px;
+    margin-left: 10px;
+    color: #333;
+  }
+}
+

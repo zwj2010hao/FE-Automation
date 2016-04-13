@@ -1,0 +1,29 @@
+.vip-main {
+  background: $mainBgColor;
+  padding-bottom: 60px;
+}
+
+.vip-banner {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.vip-row {
+  overflow: hidden;
+  .vip-col-large {
+    width: 730px;
+  }
+  .vip-col-small {
+    width: 230px;
+  }
+  .vip-col-middle {
+    width: 480px;
+  }
+  .vip-col-left {
+    float: left;
+    margin-right: 20px;
+  }
+  .vip-col-right {
+    float: left;
+  }
+}
