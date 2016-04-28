@@ -1,20 +1,25 @@
 'use strict';
 const gulp = require('gulp');
 const path = require('path');
+const fs = require('fs');
+
 const runSequence = require('run-sequence');
 const plugins = require('gulp-load-plugins')();
 const vipConfig = require('./config/vipConfig');
 const buildTmpl = require('./tasks/buildTmpl');
+
+const Engine = require('velocity').Engine;
+const parser = require('velocity').parser;
+const Data = require('velocity').Data;
+
 const config = {
   'dist': path.join(__dirname, 'dist'),
   'src': path.join(__dirname, 'src'),
-  'task': path.join(__dirname, 'task'),
   'js': vipConfig.jsModule,
   'jsTmpName':vipConfig.tmplateName,
   'jsTmpPath':vipConfig.tmplatePath,
   'cssPath':vipConfig.cssPath
 };
-
 gulp.task('sass', function () {
   gulp.src(path.join(config.src,'styles',config.cssPath,'*.scss'))
     .pipe(plugins.sass.sync().on('error', function (err) {
@@ -32,7 +37,7 @@ gulp.task('sass', function () {
      ]))
     .pipe(plugins.importCss())
     .pipe(plugins.csscomb())
-    .pipe(gulp.dest(path.join(config.dist,'styles',config.cssPath)));
+    .pipe(gulp.dest(path.join(config.dist,'styles')));
 });
 
 gulp.task('tmpl2js', function () {
@@ -62,7 +67,31 @@ gulp.task('tmpl2js', function () {
     .pipe(gulp.dest(path.join(config.js)))
 });
 
-gulp.task('start', function () {
-  gulp.watch('src/styles/*.scss', ['sass']);
-  gulp.watch('src/snippets/*.html', ['tmpl2js']);
+gulp.task('velocity', function (callback) {
+    var context = fs.readFileSync(path.join(config.src, 'data/index/index.json'), {
+    encoding: 'utf8'
+    });
+    var engine = new Engine({
+        root:path.join(__dirname,''),
+        template:path.join(__dirname, '/index.vm'),
+        output:path.join(__dirname, '/index.html')
+    });
+    var result = '';
+    try {
+    result = engine.render(JSON.parse(context));
+    } catch (err) {
+    plugins.util.log('Velocitycity Render Error!', err.message)
+    }
+    callback();
+});
+
+gulp.task('copy:image', function () {
+  gulp.src(path.join(config.src, 'images/*'))
+    .pipe(gulp.dest(path.join(config.dist, 'images')));
+});
+gulp.task('start', ['sass','copy:image','velocity'],function () {
+  gulp.watch('src/styles/**/*.scss', ['sass']);
+  //gulp.watch('src/snippets/*.html', ['tmpl2js']);
+  gulp.watch('src/images/*.scss', ['sass']);
+  gulp.watch('./*.vm', ['velocity']);
 });
