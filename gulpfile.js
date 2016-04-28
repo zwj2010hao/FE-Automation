@@ -37,8 +37,6 @@ gulp.task('sass', function () {
 
 gulp.task('tmpl2js', function () {
   var text = '/* 该模块是由gulp任务自动生成，请不要直接改动！\r\n'
-    + ' * 如需改动，请联系zhaojianfei@58.com、xujiao01@58.com、mulina@58.com或zhongweijia@58.com\r\n'
-    + ' * 或模块命名规范参考文档http://fedoc.58corp.com/Public/fedoc/%E6%8B%9B%E8%81%98/\r\n'
     + ' */\r\n'
     + 'var templates = {};\r\n';
   gulp.src([path.join(config.src, 'snippets/',config.jsTmpPath,'/**/*.html'),path.join(config.src,'snippets/common/*.html')])
