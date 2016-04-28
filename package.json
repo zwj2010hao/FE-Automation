@@ -31,8 +31,10 @@
     "gulp-sass": "^2.2.0",
     "gulp-tmpl2js": "^0.1.1",
     "gulp-util": "^3.0.7",
+    "gulp-velocity": "^0.0.2",
     "gulp-wrap-amd": "^0.5.0",
     "run-sequence": "^1.1.5",
-    "through2": "^2.0.1"
+    "through2": "^2.0.1",
+    "velocity": "^0.7.2"
   }
 }

@@ -6,22 +6,16 @@
 	<link rel="stylesheet" type="text/css" href="./dist/styles/index/index.css">
 </head>
 <body>
-	<!-- <header>aaa</header> -->
+	<!-- #parse("$!{webRoot}/src/template/pc/common/header.html") -->
 	<div id="movebg"></div>
 	<div class="wraper">
 		<h1 class='blink-blue animated rotateIn'>Welcome to my world ！！！</h1>
 		<artical class="nav-cont">
 			<h1>GO To >></h1>
 			<ul class="clearfix">
-				
-				<li><a href="https://zwj2010hao.gitbooks.io/new-conclude/content/" target="_blank">Knowledge</a></li>
-				
-				<li><a href="" target="_blank">Component</a></li>
-				
-				<li><a href="" target="_blank">to be continue</a></li>
-				
-				<li><a href="" target="_blank">to be continue</a></li>
-				
+				#foreach($info in $nav-cont)
+				<li><a href="$!info.url" target="_blank">$!info.name</a></li>
+				#end
 			</ul>
 		</artical>
 	</div>
