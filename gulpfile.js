@@ -12,6 +12,8 @@ const Engine = require('velocity').Engine;
 const parser = require('velocity').parser;
 const Data = require('velocity').Data;
 
+const pngquant = require('imagemin-pngquant')
+
 const config = {
   'dist': path.join(__dirname, 'dist'),
   'src': path.join(__dirname, 'src'),
@@ -85,11 +87,25 @@ gulp.task('velocity', function (callback) {
     callback();
 });
 
-gulp.task('copy:image', function () {
-  gulp.src(path.join(config.src, 'images/*'))
-    .pipe(gulp.dest(path.join(config.dist, 'images')));
+gulp.task('copy:js', function () {
+  gulp.src(path.join(config.src, 'js/*'))
+    .pipe(gulp.dest(path.join(config.dist, 'js')));
 });
-gulp.task('start', ['sass','copy:image','velocity'],function () {
+
+gulp.task('minimages', function() {
+    return gulp.src(path.join(config.src, 'images/**[!sprite]/*'))
+        .pipe(plugins.imagemin({
+            progressive: true,
+            svgoPlugins: [
+                {removeViewBox: false},
+                {cleanupIDs: false}
+            ],
+            use: [pngquant()]
+        }))
+        .pipe(gulp.dest(path.join(config.dist,'images')));
+});
+
+gulp.task('start', ['sass','velocity','minimages','copy:js'],function () {
   gulp.watch('src/styles/**/*.scss', ['sass']);
   //gulp.watch('src/snippets/*.html', ['tmpl2js']);
   gulp.watch('src/images/*.scss', ['sass']);

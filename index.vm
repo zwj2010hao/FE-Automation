@@ -1,24 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" type="text/css" href="./dist/styles/index/index.css">
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rookie Station</title>
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="./dist/images/index/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="./dist/styles/index/index.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
-	<!-- #parse("$!{webRoot}/src/template/pc/common/header.html") -->
-	<div id="movebg"></div>
-	<div class="wraper">
-		<h1 class='blink-blue animated rotateIn'>Welcome to my world ！！！</h1>
-		<artical class="nav-cont">
-			<h1>GO To >></h1>
-			<ul class="clearfix">
-				#foreach($info in $nav-cont)
-				<li><a href="$!info.url" target="_blank">$!info.name</a></li>
-				#end
-			</ul>
-		</artical>
+#parse("$!{webRoot}/src/template/index/templatemo_banner_slide.html")
+	<!-- <div id="templatemo_mobile_menu">
+        <ul class="nav nav-pills nav-stacked">
+            <li><a href="#templatemo_banner_slide"><i class="glyphicon glyphicon-home"></i> &nbsp; Home</a></li>
+            <li><a href="#templatemo_about"><i class="glyphicon glyphicon-briefcase"></i> &nbsp; About</a></li>
+            <li><a href="#templatemo_events"><i class="glyphicon glyphicon-bullhorn"></i> &nbsp; Events</a></li>
+            <li><a href="#templatemo_timeline"><i class="glyphicon glyphicon-calendar"></i> &nbsp; Timeline</a></li>
+            <li><a rel="nofollow" href="http://www.facebook.com/templatemo" class="external-link"><i class="glyphicon glyphicon-export"></i> &nbsp; External</a></li>
+            <li><a href="#templatemo_contact"><i class="glyphicon glyphicon-phone-alt"></i> &nbsp; Contact</a></li>
+        </ul>
+</div> -->
+	<div class="container_wapper">
+	#parse("$!{webRoot}/src/template/index/templatemo_banner_menu.html")
 	</div>
+	#parse("$!{webRoot}/src/template/index/templatemo_link.html")
+	#parse("$!{webRoot}/src/template/index/templatemo_article.html")
+	#parse("$!{webRoot}/src/template/index/templatemo_footer.html")
+	<script src="./dist/js/jquery.min.js"></script>
+	<script src="./dist/js/jquery-ui.min.js"></script>
+	<script src="./dist/js/bootstrap.min.js"></script>
+	<script src="./dist/js/jquery.singlePageNav.min.js"></script>
+	<script src="./dist/js/unslider.min.js"></script>
+	<script src="./dist/js/templatemo_script.js"></script>
 </body>
 </html>
 
