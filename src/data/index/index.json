@@ -1,5 +1,6 @@
 {
   "catalog2":"订购商城",
+  "mock":"true",
   "nav-cont":[{
   	"url":"https://zwj2010hao.gitbooks.io/new-conclude/content/",
   	"name":"Knowledge"

@@ -39,6 +39,8 @@
 	<script src="./dist/js/jquery.singlePageNav.min.js"></script>
 	<script src="./dist/js/unslider.min.js"></script>
 	<script src="./dist/js/templatemo_script.js"></script>
+    <script src="./src/mock/jquery.mockjax.js"></script>
+    <script src="./src/mock/mock.js"></script>
 </body>
 </html>
 

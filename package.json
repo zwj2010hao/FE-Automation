@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/zwj2010hao/FE-Automation#readme",
   "devDependencies": {
+    "browser-sync": "^2.12.8",
+    "del": "^2.2.0",
+    "eslint": "^2.10.1",
+    "eslint-plugin-react": "^5.1.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-concat": "^2.6.0",
@@ -35,6 +39,7 @@
     "gulp-velocity": "^0.0.2",
     "gulp-wrap-amd": "^0.5.0",
     "imagemin-pngquant": "^4.2.2",
+    "mock": "^0.1.1",
     "run-sequence": "^1.1.5",
     "through2": "^2.0.1",
     "velocity": "^0.7.2"

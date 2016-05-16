@@ -11719,7 +11719,9 @@ h1
     padding-top: 35px;
     padding-bottom: 35px;
 
-    transition-duration: .5s;
+    -webkit-transition-duration: .5s;
+         -o-transition-duration: .5s;
+            transition-duration: .5s;
 
     color: #000;
     background: repeat-x url('../../images/index/banner_bg.jpg') 0 -94px;
@@ -11777,7 +11779,7 @@ h1
     max-width: 600px;
     margin: 120px auto auto auto;
 
-    background: rgba(0, 0, 0, .0);
+    background: transparent;
 }
 
 .banner div.slide_caption h1,
@@ -11789,7 +11791,7 @@ h1
 
     color: #fff;
     background: none;
-    text-shadow: 1px 1px 5px rgba(150, 150, 150, 1);
+    text-shadow: 1px 1px 5px #969696;
 }
 
 .banner div.slide_caption a
@@ -11812,19 +11814,22 @@ h1
 .templatemo_banner_slide_01
 {
     background: url('../../images/index/templatemo_banner_slide_01.jpg');
-    background-size: cover;
+    -webkit-background-size: cover;
+            background-size: cover;
 }
 
 .templatemo_banner_slide_02
 {
     background: url('../../images/index/templatemo_banner_slide_02.jpg');
-    background-size: cover;
+    -webkit-background-size: cover;
+            background-size: cover;
 }
 
 .templatemo_banner_slide_03
 {
     background: url('../../images/index/templatemo_banner_slide_03.jpg');
-    background-size: cover;
+    -webkit-background-size: cover;
+            background-size: cover;
 }
 
 /*about our organization*/
@@ -12295,7 +12300,7 @@ h1
 
 /*  Small devices (tablets, 768px and up)  */
 
-@media (max-width: 768px )
+@media (max-width: 768px)
 {
     #templatemo_about .pre_next
     {
@@ -12310,7 +12315,7 @@ h1
 
 /*  Medium devices (desktops, 992px and up)  */
 
-@media (max-width: 970px )
+@media (max-width: 970px)
 {
     #templatemo_timeline .right_timer
     {
@@ -12329,7 +12334,3 @@ h1
 }
 
 /*  Large devices (large desktops, 1200px and up)  */
-
-@media (min-width: 1200px )
-{
-}

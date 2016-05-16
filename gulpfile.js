@@ -2,6 +2,7 @@
 const gulp = require('gulp');
 const path = require('path');
 const fs = require('fs');
+const del = require('del');
 
 const runSequence = require('run-sequence');
 const plugins = require('gulp-load-plugins')();
@@ -12,7 +13,9 @@ const Engine = require('velocity').Engine;
 const parser = require('velocity').parser;
 const Data = require('velocity').Data;
 
-const pngquant = require('imagemin-pngquant')
+const pngquant = require('imagemin-pngquant');
+const browserSync = require('browser-sync').create();
+const reload      = browserSync.reload;
 
 const config = {
   'dist': path.join(__dirname, 'dist'),
@@ -22,6 +25,7 @@ const config = {
   'jsTmpPath':vipConfig.tmplatePath,
   'cssPath':vipConfig.cssPath
 };
+
 gulp.task('sass', function () {
   gulp.src(path.join(config.src,'styles',config.cssPath,'*.scss'))
     .pipe(plugins.sass.sync().on('error', function (err) {
@@ -39,7 +43,8 @@ gulp.task('sass', function () {
      ]))
     .pipe(plugins.importCss())
     .pipe(plugins.csscomb())
-    .pipe(gulp.dest(path.join(config.dist,'styles')));
+    .pipe(gulp.dest(path.join(config.dist,'styles')))
+    .pipe(reload({stream: true}));
 });
 
 gulp.task('tmpl2js', function () {
@@ -89,7 +94,20 @@ gulp.task('velocity', function (callback) {
 
 gulp.task('copy:js', function () {
   gulp.src(path.join(config.src, 'js/*'))
-    .pipe(gulp.dest(path.join(config.dist, 'js')));
+      .pipe(gulp.dest(path.join(config.dist, 'js')));
+});
+gulp.task('copy:html', function () {
+  gulp.src(path.join(__dirname, '*.html'))
+      .pipe(gulp.dest(config.dist));
+});
+gulp.task('copy:fonts', function () {
+  gulp.src(path.join(config.src, 'fonts/*'))
+      .pipe(gulp.dest(path.join(config.dist, 'styles/fonts')));
+});
+gulp.task('clean:dist', function () {
+ 	 del([config.dist],function(){
+     plugins.util.log('dist clean')
+   });
 });
 
 gulp.task('minimages', function() {
@@ -105,9 +123,24 @@ gulp.task('minimages', function() {
         .pipe(gulp.dest(path.join(config.dist,'images')));
 });
 
-gulp.task('start', ['sass','velocity','minimages','copy:js'],function () {
-  gulp.watch('src/styles/**/*.scss', ['sass']);
-  //gulp.watch('src/snippets/*.html', ['tmpl2js']);
-  gulp.watch('src/images/*.scss', ['sass']);
+gulp.task('server',['build'],function () {
+  browserSync.init({
+    port: 9000,
+    startPath: '/?debug',
+    server: {
+      baseDir: './'
+    }
+  })
+  gulp.watch("./*.html").on('change',reload);
+});
+
+gulp.task('build',['sass','velocity','minimages','copy:js','copy:fonts'],function () {
+  gulp.watch('src/styles/**/*.+(scss|sass|css)', ['sass']);
+  gulp.watch('src/snippets/*.html', ['tmpl2js']);
   gulp.watch('./*.vm', ['velocity']);
+  gulp.watch('src/template/**/*.html', ['velocity']);
+});
+
+gulp.task('default',function(){
+  runSequence('server')
 });
