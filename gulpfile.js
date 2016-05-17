@@ -123,6 +123,16 @@ gulp.task('minimages', function() {
         .pipe(gulp.dest(path.join(config.dist,'images')));
 });
 
+gulp.task('autosprite', function() {
+    gulp.src(path.join(config.src, 'images/sprite/*.png')).pipe(plugins.spritesmith({
+        imgName: 'sprite.png',
+        cssName: 'sprite.css',
+        padding:2,
+        algorithm: 'binary-tree'
+    }))
+    .pipe(gulp.dest(path.join(config.src, 'images/spriteComplete/')));
+});
+
 gulp.task('server',['build'],function () {
   browserSync.init({
     port: 9000,
